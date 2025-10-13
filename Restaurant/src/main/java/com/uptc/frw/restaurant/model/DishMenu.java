@@ -1,11 +1,12 @@
 package com.uptc.frw.restaurant.model;
 
+import com.uptc.frw.restaurant.model.key.DishMenuKey;
 import jakarta.persistence.*;
 
 import java.util.Date;
 @Entity
 @Table(name = "PLATOS_MENU")
-@IdClass(DiscriminatorColumn.class)
+@IdClass(DishMenuKey.class)
 public class DishMenu {
     @Id
     @ManyToOne(cascade = CascadeType.PERSIST)
