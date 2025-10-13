@@ -1,11 +1,13 @@
 package com.uptc.frw.restaurant.model;
 
+import com.uptc.frw.restaurant.model.key.DishMenuKey;
 import jakarta.persistence.*;
 
 import java.util.List;
 
 @Entity
 @Table(name = "VENTAS_MENU")
+@IdClass(SaleMenu.class)
 public class SaleMenu {
 
     @Column(name = "ID_SALE", insertable = false, updatable = false)
@@ -15,11 +17,11 @@ public class SaleMenu {
     @Column(name = "CANTIDAD")
     private long quantity;
     @Id
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST})
     @JoinColumn(name = "ID_MENU")
     private Menu menu;
     @Id
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST})
     @JoinColumn(name = "ID_SALE")
     private Sale sale;
 
