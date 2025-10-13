@@ -24,7 +24,7 @@ public class MenuService {
     }
     public Menu updateMenu(Menu menu){
         Menu menu1 = getMenuId(menu.getIdMenu());
-        if (menu1 == null) {
+        if (menu1 != null) {
             menu1.setDescription(menu.getDescription());
             saveMenu(menu1);
             return menu1;
