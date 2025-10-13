@@ -15,7 +15,7 @@ public class Menu {
     private String description;
     @OneToMany(mappedBy = "salesMenus")
     private List<SaleMenu> saleMenus;
-    @OneToMany(mappedBy = "dishesMenus")
+    @OneToMany(mappedBy = "menu")
     private List<DishMenu> dishesMenus;
     public Menu() {
     }
