@@ -16,6 +16,21 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "user",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"body": {
@@ -28,7 +43,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8181/menus/1",
+							"raw": "http://localhost:8181/menus/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -36,7 +51,7 @@
 							"port": "8181",
 							"path": [
 								"menus",
-								"1"
+								"2"
 							]
 						}
 					},
@@ -45,6 +60,21 @@
 				{
 					"name": "get all",
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "user",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -64,11 +94,26 @@
 				{
 					"name": "SaveMenu",
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "user",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": 5,\n    \"title\": \"Escape\",\n    \"price\": 15000.00\n}",
+							"raw": "{\n    \"description\": \"Chavez\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -92,6 +137,21 @@
 				{
 					"name": "UpdateMenu",
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "user",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [],
 						"body": {
@@ -120,6 +180,21 @@
 				{
 					"name": "DeleteMenu",
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "user",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
