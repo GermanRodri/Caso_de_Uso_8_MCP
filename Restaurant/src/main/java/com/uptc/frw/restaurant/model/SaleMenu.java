@@ -32,7 +32,7 @@ public class SaleMenu {
         return idSale;
     }
 
-    public void setIdSale(int idSale) {
+    public void setIdSale(long idSale) {
         this.idSale = idSale;
     }
 
@@ -40,7 +40,7 @@ public class SaleMenu {
         return idMenu;
     }
 
-    public void setIdMenu(int idMenu) {
+    public void setIdMenu(long idMenu) {
         this.idMenu = idMenu;
     }
 
