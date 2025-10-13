@@ -2,20 +2,28 @@ package com.uptc.frw.restaurant.model;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
-@Table(name = "ventas_menus")
+@Table(name = "VENTAS_MENU")
 public class SaleMenu {
 
     @Id
-    @Column(name = "id_ventas_menu")
+    @Column(name = "ID_VENTAS_MENU")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idSaleMenu;
-    @Column(name = "id_menu")
+    @Column(name = "ID_SALE", insertable = false, updatable = false)
     private int idSale;
-    @Column(name = "id_menu")
+    @Column(name = "ID_MENU", insertable = false, updatable = false)
     private int idMenu;
-    @Column(name = "cantidad")
+    @Column(name = "CANTIDAD")
     private long quantity;
+    @ManyToOne
+    @JoinColumn(name = "ID_MENU")
+    private Menu menu;
+    @ManyToOne
+    @JoinColumn(name = "ID_SALE")
+    private Sale sale;
 
     public SaleMenu() {
     }
