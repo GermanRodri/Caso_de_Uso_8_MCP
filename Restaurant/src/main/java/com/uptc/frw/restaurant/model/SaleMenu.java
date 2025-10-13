@@ -1,5 +1,6 @@
 package com.uptc.frw.restaurant.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.uptc.frw.restaurant.model.key.DishMenuKey;
 import jakarta.persistence.*;
 
@@ -19,10 +20,12 @@ public class SaleMenu {
     @Id
     @ManyToOne(cascade = {CascadeType.PERSIST})
     @JoinColumn(name = "ID_MENU")
+    @JsonIgnore
     private Menu menu;
     @Id
     @ManyToOne(cascade = {CascadeType.PERSIST})
     @JoinColumn(name = "ID_VENTA")
+    @JsonIgnore
     private Sale sale;
 
     public SaleMenu() {

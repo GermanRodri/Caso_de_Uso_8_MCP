@@ -13,10 +13,13 @@ public class SaleMenuController {
 
     @Autowired
     private SaleMenuService saleMenuService;
-
-    @GetMapping("/{id}")
+    @GetMapping
     public List<SaleMenu> getAllSalesMenu(){
         return saleMenuService.findAllSaleMenuService();
+    }
+    @GetMapping("/{id}")
+    public SaleMenu saleMenu(@PathVariable Long id){
+        return saleMenuService.getSaleMenuById(id);
     }
     @PostMapping
     public SaleMenu saveSaleMenu(@RequestBody SaleMenu saleMenu){
