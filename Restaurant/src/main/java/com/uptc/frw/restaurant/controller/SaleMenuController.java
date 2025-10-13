@@ -2,7 +2,6 @@ package com.uptc.frw.restaurant.controller;
 
 import com.uptc.frw.restaurant.model.SaleMenu;
 import com.uptc.frw.restaurant.service.SaleMenuService;
-import com.uptc.frw.restaurant.service.SaleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,7 +14,7 @@ public class SaleMenuController {
     @Autowired
     private SaleMenuService saleMenuService;
 
-    @GetMapping
+    @GetMapping("/{id}")
     public List<SaleMenu> getAllSalesMenu(){
         return saleMenuService.findAllSaleMenuService();
     }

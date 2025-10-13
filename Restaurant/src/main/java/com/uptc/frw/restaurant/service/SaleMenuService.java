@@ -11,8 +11,6 @@ import java.util.List;
 @Service
 public class SaleMenuService {
     @Autowired
-    private SaleService saleService;
-    @Autowired
     private SaleMenuRepository saleMenuRepository;
 
     public List<SaleMenu> findAllSaleMenuService(){
