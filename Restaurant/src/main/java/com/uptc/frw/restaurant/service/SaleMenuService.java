@@ -1,66 +1,43 @@
 package com.uptc.frw.restaurant.service;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 
-@Entity
-@Table(name = "ventas_menus")
+import com.uptc.frw.restaurant.model.SaleMenu;
+import com.uptc.frw.restaurant.repository.SaleMenuRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
 public class SaleMenuService {
+    @Autowired
+    private SaleService saleService;
+    @Autowired
+    private SaleMenuRepository saleMenuRepository;
 
-    @Id
-    @Column(name = "id_ventas_menu")
-    private int idSaleMenu;
-    @Column(name = "id_menu")
-    private int idSale;
-    @Column(name = "id_menu")
-    private int idMenu;
-    @Column(name = "cantidad")
-    private long quantity;
-
-    public SaleMenuService() {
+    public List<SaleMenu> findAllSaleMenuService(){
+        return saleMenuRepository.findAll();
     }
 
-    public int getIdSaleMenu() {
-        return idSaleMenu;
+    public SaleMenu getSaleMenuById(long id) {
+        SaleMenu saleMenu = saleMenuRepository.findById(id).orElse(null);
+        return saleMenu;
     }
 
-    public void setIdSaleMenu(int idSaleMenu) {
-        this.idSaleMenu = idSaleMenu;
+    public SaleMenu saveSaleMenu(SaleMenu saleMenu){
+        SaleMenu newSaleMenu = saleMenuRepository.save(saleMenu);
+        return newSaleMenu;
     }
 
-    public int getIdSale() {
-        return idSale;
+    public SaleMenu updateSalesMenu(SaleMenu saleMenu){
+        SaleMenu newSaleMenu = getSaleMenuById(saleMenu.getIdMenu());
+        if (newSaleMenu == null){
+            newSaleMenu.setQuantity(saleMenu.getQuantity());
+            return newSaleMenu;
+        }else {
+            throw new RuntimeException("El registro no existe");
+        }
     }
 
-    public void setIdSale(int idSale) {
-        this.idSale = idSale;
-    }
 
-    public int getIdMenu() {
-        return idMenu;
-    }
-
-    public void setIdMenu(int idMenu) {
-        this.idMenu = idMenu;
-    }
-
-    public long getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(long quantity) {
-        this.quantity = quantity;
-    }
-
-    @Override
-    public String toString() {
-        return "SaleMenuService{" +
-                "idSaleMenu=" + idSaleMenu +
-                ", idSale=" + idSale +
-                ", idMenu=" + idMenu +
-                ", quantity=" + quantity +
-                '}';
-    }
 }
