@@ -1,26 +1,28 @@
 package com.uptc.frw.restaurant.model;
 
+import com.uptc.frw.restaurant.model.key.DishMenuKey;
 import jakarta.persistence.*;
 
 import java.util.List;
 
 @Entity
 @Table(name = "VENTAS_MENU")
+@IdClass(SaleMenu.class)
 public class SaleMenu {
 
-    @Column(name = "ID_SALE", insertable = false, updatable = false)
+    @Column(name = "ID_VENTA", insertable = false, updatable = false)
     private long idSale;
     @Column(name = "ID_MENU", insertable = false, updatable = false)
     private long idMenu;
     @Column(name = "CANTIDAD")
     private long quantity;
     @Id
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST})
     @JoinColumn(name = "ID_MENU")
     private Menu menu;
     @Id
-    @ManyToOne
-    @JoinColumn(name = "ID_SALE")
+    @ManyToOne(cascade = {CascadeType.PERSIST})
+    @JoinColumn(name = "ID_VENTA")
     private Sale sale;
 
     public SaleMenu() {
@@ -30,7 +32,7 @@ public class SaleMenu {
         return idSale;
     }
 
-    public void setIdSale(int idSale) {
+    public void setIdSale(long idSale) {
         this.idSale = idSale;
     }
 
@@ -38,7 +40,7 @@ public class SaleMenu {
         return idMenu;
     }
 
-    public void setIdMenu(int idMenu) {
+    public void setIdMenu(long idMenu) {
         this.idMenu = idMenu;
     }
 
