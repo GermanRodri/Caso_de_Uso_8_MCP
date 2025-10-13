@@ -1,0 +1,1003 @@
+{
+	"log": {
+		"version": "1.2",
+		"creator": {
+			"name": "Insomnia REST Client",
+			"version": "insomnia.desktop.app:v11.6.1"
+		},
+		"entries": [
+			{
+				"startedDateTime": "2025-10-13T04:23:13.297Z",
+				"time": 78.94,
+				"request": {
+					"method": "GET",
+					"url": "http://localhost:8181/sales",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [
+						{
+							"name": "JSESSIONID",
+							"value": "4D71D66ABBD9ADE633F74ABB62CCB532",
+							"path": "/",
+							"domain": "localhost",
+							"httpOnly": true
+						}
+					],
+					"headers": [
+						{
+							"name": "User-Agent",
+							"value": "insomnia/11.6.1"
+						},
+						{
+							"name": "Authorization",
+							"value": "Basic dXNlcjpwYXNzd29yZA=="
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "",
+						"text": ""
+					},
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"response": {
+					"status": 200,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"name": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"name": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"name": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"name": "Expires",
+							"value": "0"
+						},
+						{
+							"name": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"name": "Date",
+							"value": "Mon, 13 Oct 2025 03:51:53 GMT"
+						}
+					],
+					"content": {
+						"size": 127,
+						"mimeType": "application/json",
+						"text": "[{\"id\":1,\"date\":\"2025-08-16T15:18:20.000+00:00\",\"saleMenus\":[]},{\"id\":2,\"date\":\"2025-11-15T15:18:20.000+00:00\",\"saleMenus\":[]}]"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 78.94,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "GetAllSales"
+			},
+			{
+				"startedDateTime": "2025-10-13T04:23:13.297Z",
+				"time": 85.983,
+				"request": {
+					"method": "DELETE",
+					"url": "http://localhost:8181/sales?id=3",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [
+						{
+							"name": "JSESSIONID",
+							"value": "4D71D66ABBD9ADE633F74ABB62CCB532",
+							"path": "/",
+							"domain": "localhost",
+							"httpOnly": true
+						}
+					],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "User-Agent",
+							"value": "insomnia/11.6.1"
+						},
+						{
+							"name": "Authorization",
+							"value": "Basic dXNlcjpwYXNzd29yZA=="
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n\t\"id\": 1,\n\t\"date\": \"2025-08-16T15:18:20.000+00:00\"\n}"
+					},
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"response": {
+					"status": 200,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"name": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"name": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"name": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"name": "Expires",
+							"value": "0"
+						},
+						{
+							"name": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"name": "Content-Length",
+							"value": "0"
+						},
+						{
+							"name": "Date",
+							"value": "Mon, 13 Oct 2025 03:51:47 GMT"
+						}
+					],
+					"content": {
+						"size": 0,
+						"mimeType": "",
+						"text": ""
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 85.983,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "DeleteSales"
+			},
+			{
+				"startedDateTime": "2025-10-13T04:23:13.297Z",
+				"time": 445.498,
+				"request": {
+					"method": "PUT",
+					"url": "http://localhost:8181/sales",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [
+						{
+							"name": "JSESSIONID",
+							"value": "4D71D66ABBD9ADE633F74ABB62CCB532",
+							"path": "/",
+							"domain": "localhost",
+							"httpOnly": true
+						}
+					],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "User-Agent",
+							"value": "insomnia/11.6.1"
+						},
+						{
+							"name": "Authorization",
+							"value": "Basic dXNlcjpwYXNzd29yZA=="
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n\t\"id\": 1,\n\t\"date\": \"2025-08-16T15:18:20.000+00:00\"\n}"
+					},
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"response": {
+					"status": 200,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"name": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"name": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"name": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"name": "Expires",
+							"value": "0"
+						},
+						{
+							"name": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"name": "Date",
+							"value": "Mon, 13 Oct 2025 03:36:19 GMT"
+						}
+					],
+					"content": {
+						"size": 62,
+						"mimeType": "application/json",
+						"text": "{\"id\":1,\"date\":\"2025-08-16T15:18:20.000+00:00\",\"saleMenus\":[]}"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 445.498,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "UpdateSales"
+			},
+			{
+				"startedDateTime": "2025-10-13T04:23:13.297Z",
+				"time": 104.89,
+				"request": {
+					"method": "POST",
+					"url": "http://localhost:8181/sales",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [
+						{
+							"name": "JSESSIONID",
+							"value": "4D71D66ABBD9ADE633F74ABB62CCB532",
+							"path": "/",
+							"domain": "localhost",
+							"httpOnly": true
+						}
+					],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "User-Agent",
+							"value": "insomnia/11.6.1"
+						},
+						{
+							"name": "Authorization",
+							"value": "Basic dXNlcjpwYXNzd29yZA=="
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n\t\"date\": \"2025-11-15T15:18:20.000+00:00\"\n}"
+					},
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"response": {
+					"status": 200,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"name": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"name": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"name": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"name": "Expires",
+							"value": "0"
+						},
+						{
+							"name": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"name": "Date",
+							"value": "Mon, 13 Oct 2025 03:40:37 GMT"
+						}
+					],
+					"content": {
+						"size": 64,
+						"mimeType": "application/json",
+						"text": "{\"id\":3,\"date\":\"2025-11-15T15:18:20.000+00:00\",\"saleMenus\":null}"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 104.89,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "SaveSales"
+			},
+			{
+				"startedDateTime": "2025-10-13T04:23:13.297Z",
+				"time": 80.8,
+				"request": {
+					"method": "GET",
+					"url": "http://localhost:8181/sales/1",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [
+						{
+							"name": "JSESSIONID",
+							"value": "4D71D66ABBD9ADE633F74ABB62CCB532",
+							"path": "/",
+							"domain": "localhost",
+							"httpOnly": true
+						}
+					],
+					"headers": [
+						{
+							"name": "User-Agent",
+							"value": "insomnia/11.6.1"
+						},
+						{
+							"name": "Authorization",
+							"value": "Basic dXNlcjpwYXNzd29yZA=="
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "",
+						"text": ""
+					},
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"response": {
+					"status": 200,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"name": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"name": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"name": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"name": "Expires",
+							"value": "0"
+						},
+						{
+							"name": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"name": "Date",
+							"value": "Mon, 13 Oct 2025 03:45:23 GMT"
+						}
+					],
+					"content": {
+						"size": 62,
+						"mimeType": "application/json",
+						"text": "{\"id\":1,\"date\":\"2025-08-16T15:18:20.000+00:00\",\"saleMenus\":[]}"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 80.8,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "GetSaleById"
+			},
+			{
+				"startedDateTime": "2025-10-13T04:23:13.297Z",
+				"time": 82.646,
+				"request": {
+					"method": "GET",
+					"url": "http://localhost:8181/dishes",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [
+						{
+							"name": "JSESSIONID",
+							"value": "4D71D66ABBD9ADE633F74ABB62CCB532",
+							"path": "/",
+							"domain": "localhost",
+							"httpOnly": true
+						}
+					],
+					"headers": [
+						{
+							"name": "User-Agent",
+							"value": "insomnia/11.6.1"
+						},
+						{
+							"name": "Authorization",
+							"value": "Basic dXNlcjpwYXNzd29yZA=="
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "",
+						"text": ""
+					},
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"response": {
+					"status": 200,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"name": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"name": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"name": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"name": "Expires",
+							"value": "0"
+						},
+						{
+							"name": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"name": "Date",
+							"value": "Mon, 13 Oct 2025 03:48:57 GMT"
+						}
+					],
+					"content": {
+						"size": 111,
+						"mimeType": "application/json",
+						"text": "[{\"id\":2,\"dishType\":\"Postre y Entrada\",\"name\":\"Natilla\",\"description\":\"Plato de ricachones\",\"dishMenuList\":[]}]"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 82.646,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "GetAllDishes"
+			},
+			{
+				"startedDateTime": "2025-10-13T04:23:13.297Z",
+				"time": 104.53800000000001,
+				"request": {
+					"method": "DELETE",
+					"url": "http://localhost:8181/dishes?id=1",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [
+						{
+							"name": "JSESSIONID",
+							"value": "4D71D66ABBD9ADE633F74ABB62CCB532",
+							"path": "/",
+							"domain": "localhost",
+							"httpOnly": true
+						}
+					],
+					"headers": [
+						{
+							"name": "User-Agent",
+							"value": "insomnia/11.6.1"
+						},
+						{
+							"name": "Authorization",
+							"value": "Basic dXNlcjpwYXNzd29yZA=="
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "",
+						"text": ""
+					},
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"response": {
+					"status": 200,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"name": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"name": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"name": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"name": "Expires",
+							"value": "0"
+						},
+						{
+							"name": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"name": "Content-Length",
+							"value": "0"
+						},
+						{
+							"name": "Date",
+							"value": "Mon, 13 Oct 2025 03:46:53 GMT"
+						}
+					],
+					"content": {
+						"size": 0,
+						"mimeType": "",
+						"text": ""
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 104.53800000000001,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "DeleteDishes"
+			},
+			{
+				"startedDateTime": "2025-10-13T04:23:13.297Z",
+				"time": 83.183,
+				"request": {
+					"method": "PUT",
+					"url": "http://localhost:8181/dishes",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [
+						{
+							"name": "JSESSIONID",
+							"value": "4D71D66ABBD9ADE633F74ABB62CCB532",
+							"path": "/",
+							"domain": "localhost",
+							"httpOnly": true
+						}
+					],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "User-Agent",
+							"value": "insomnia/11.6.1"
+						},
+						{
+							"name": "Authorization",
+							"value": "Basic dXNlcjpwYXNzd29yZA=="
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n\t\"id\": 2,\n\t\"dishType\": \"Postre\",\n\t\"name\": \"Natilla\",\n\t\"description\": \"Plato de ricachones\"\n}"
+					},
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"response": {
+					"status": 200,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"name": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"name": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"name": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"name": "Expires",
+							"value": "0"
+						},
+						{
+							"name": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"name": "Date",
+							"value": "Mon, 13 Oct 2025 03:49:08 GMT"
+						}
+					],
+					"content": {
+						"size": 99,
+						"mimeType": "application/json",
+						"text": "{\"id\":2,\"dishType\":\"Postre\",\"name\":\"Natilla\",\"description\":\"Plato de ricachones\",\"dishMenuList\":[]}"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 83.183,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "UpdateDishes"
+			},
+			{
+				"startedDateTime": "2025-10-13T04:23:13.297Z",
+				"time": 89.26299999999999,
+				"request": {
+					"method": "POST",
+					"url": "http://localhost:8181/dishes",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [
+						{
+							"name": "JSESSIONID",
+							"value": "4D71D66ABBD9ADE633F74ABB62CCB532",
+							"path": "/",
+							"domain": "localhost",
+							"httpOnly": true
+						}
+					],
+					"headers": [
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "User-Agent",
+							"value": "insomnia/11.6.1"
+						},
+						{
+							"name": "Authorization",
+							"value": "Basic dXNlcjpwYXNzd29yZA=="
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "application/json",
+						"text": "{\n\t\"dishType\": \"Postre y Entrada\",\n\t\"name\": \"Natilla\",\n\t\"description\": \"Plato de ricachones\"\n}"
+					},
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"response": {
+					"status": 200,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"name": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"name": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"name": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"name": "Expires",
+							"value": "0"
+						},
+						{
+							"name": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"name": "Date",
+							"value": "Mon, 13 Oct 2025 03:48:42 GMT"
+						}
+					],
+					"content": {
+						"size": 111,
+						"mimeType": "application/json",
+						"text": "{\"id\":2,\"dishType\":\"Postre y Entrada\",\"name\":\"Natilla\",\"description\":\"Plato de ricachones\",\"dishMenuList\":null}"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 89.26299999999999,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "SaveDishes"
+			},
+			{
+				"startedDateTime": "2025-10-13T04:23:13.297Z",
+				"time": 91.034,
+				"request": {
+					"method": "GET",
+					"url": "http://localhost:8181/dishes/1",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [
+						{
+							"name": "JSESSIONID",
+							"value": "4D71D66ABBD9ADE633F74ABB62CCB532",
+							"path": "/",
+							"domain": "localhost",
+							"httpOnly": true
+						}
+					],
+					"headers": [
+						{
+							"name": "User-Agent",
+							"value": "insomnia/11.6.1"
+						},
+						{
+							"name": "Authorization",
+							"value": "Basic dXNlcjpwYXNzd29yZA=="
+						}
+					],
+					"queryString": [],
+					"postData": {
+						"mimeType": "",
+						"text": ""
+					},
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"response": {
+					"status": 200,
+					"statusText": "",
+					"httpVersion": "HTTP/1.1",
+					"cookies": [],
+					"headers": [
+						{
+							"name": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"name": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"name": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"name": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"name": "Expires",
+							"value": "0"
+						},
+						{
+							"name": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"name": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"name": "Date",
+							"value": "Mon, 13 Oct 2025 03:44:54 GMT"
+						}
+					],
+					"content": {
+						"size": 109,
+						"mimeType": "application/json",
+						"text": "{\"id\":1,\"dishType\":\"Postre y Entrada\",\"name\":\"Natilla\",\"description\":\"Plato de ricachones\",\"dishMenuList\":[]}"
+					},
+					"redirectURL": "",
+					"headersSize": -1,
+					"bodySize": -1
+				},
+				"cache": {},
+				"timings": {
+					"blocked": -1,
+					"dns": -1,
+					"connect": -1,
+					"send": 0,
+					"wait": 91.034,
+					"receive": 0,
+					"ssl": -1
+				},
+				"comment": "GetDishesById"
+			}
+		]
+	}
+}
