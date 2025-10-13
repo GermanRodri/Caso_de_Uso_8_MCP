@@ -11,11 +11,11 @@ public class SaleMenu {
     @Id
     @Column(name = "ID_VENTAS_MENU")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idSaleMenu;
+    private long idSaleMenu;
     @Column(name = "ID_SALE", insertable = false, updatable = false)
-    private int idSale;
+    private long idSale;
     @Column(name = "ID_MENU", insertable = false, updatable = false)
-    private int idMenu;
+    private long idMenu;
     @Column(name = "CANTIDAD")
     private long quantity;
     @ManyToOne
@@ -28,7 +28,7 @@ public class SaleMenu {
     public SaleMenu() {
     }
 
-    public int getIdSaleMenu() {
+    public long getIdSaleMenu() {
         return idSaleMenu;
     }
 
@@ -36,7 +36,7 @@ public class SaleMenu {
         this.idSaleMenu = idSaleMenu;
     }
 
-    public int getIdSale() {
+    public long getIdSale() {
         return idSale;
     }
 
@@ -44,7 +44,7 @@ public class SaleMenu {
         this.idSale = idSale;
     }
 
-    public int getIdMenu() {
+    public long getIdMenu() {
         return idMenu;
     }
 
