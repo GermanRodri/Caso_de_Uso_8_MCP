@@ -36,7 +36,7 @@ public class SaleMenuService {
             throw new RuntimeException("El registro no existe");
         }
     }
-    public void deleteSaleMenu(Long id){
+    public void deleteSaleMenu(long id){
         saleMenuRepository.deleteById(id);
     }
 

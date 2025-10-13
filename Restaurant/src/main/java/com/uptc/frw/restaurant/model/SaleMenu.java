@@ -8,32 +8,22 @@ import java.util.List;
 @Table(name = "VENTAS_MENU")
 public class SaleMenu {
 
-    @Id
-    @Column(name = "ID_VENTAS_MENU")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idSaleMenu;
     @Column(name = "ID_SALE", insertable = false, updatable = false)
     private long idSale;
     @Column(name = "ID_MENU", insertable = false, updatable = false)
     private long idMenu;
     @Column(name = "CANTIDAD")
     private long quantity;
+    @Id
     @ManyToOne
     @JoinColumn(name = "ID_MENU")
     private Menu menu;
+    @Id
     @ManyToOne
     @JoinColumn(name = "ID_SALE")
     private Sale sale;
 
     public SaleMenu() {
-    }
-
-    public long getIdSaleMenu() {
-        return idSaleMenu;
-    }
-
-    public void setIdSaleMenu(int idSaleMenu) {
-        this.idSaleMenu = idSaleMenu;
     }
 
     public long getIdSale() {
@@ -79,7 +69,6 @@ public class SaleMenu {
     @Override
     public String toString() {
         return "SaleMenu{" +
-                "idSaleMenu=" + idSaleMenu +
                 ", idSale=" + idSale +
                 ", idMenu=" + idMenu +
                 ", quantity=" + quantity +
