@@ -42,7 +42,7 @@ public class SaleMenuService {
     }
 
     public SaleMenu updateSalesMenu(SaleMenu saleMenu){
-        SaleMenuKey keySaleMenu = findSaleMenuById(saleMenu.getMenu(),saleMenu.getSale());
+        SaleMenuKey keySaleMenu = new SaleMenuKey(saleMenu.getSale(), saleMenu.getMenu());
         SaleMenu newSaleMenu = findSaleMenuById(keySaleMenu);
         if (newSaleMenu == null){
             newSaleMenu.setQuantity(saleMenu.getQuantity());
