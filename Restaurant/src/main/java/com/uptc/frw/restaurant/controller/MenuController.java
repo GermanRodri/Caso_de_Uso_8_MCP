@@ -27,6 +27,7 @@ public class MenuController {
     public Menu updateMenu(@RequestBody Menu menu){
         return menuService.updateMenu(menu);
     }
+    @DeleteMapping
     public void deleteMenu(@RequestParam long id){
         System.out.println(id);
         menuService.deleteMenu(id);
