@@ -13,8 +13,6 @@ import java.util.List;
 public class SaleMenuController {
 
     @Autowired
-    private SaleService saleService;
-    @Autowired
     private SaleMenuService saleMenuService;
 
     @GetMapping
