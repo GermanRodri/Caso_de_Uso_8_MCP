@@ -9,9 +9,14 @@ import java.util.List;
 public class Menu {
     @Id
     @Column(name = "ID_MENU")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idMenu;
     @Column(name = "DESCRIPCION_MENU")
     private String description;
+    @OneToMany(mappedBy = "salesMenus")
+    private List<SaleMenu> saleMenus;
+    @OneToMany(mappedBy = "dishesMenus")
+    private List<DishMenu> dishesMenus;
     public Menu() {
     }
 
@@ -29,6 +34,22 @@ public class Menu {
 
     public void setIdMenu(long idMenu) {
         this.idMenu = idMenu;
+    }
+
+    public List<SaleMenu> getSaleMenus() {
+        return saleMenus;
+    }
+
+    public void setSaleMenus(List<SaleMenu> saleMenus) {
+        this.saleMenus = saleMenus;
+    }
+
+    public List<DishMenu> getDishesMenus() {
+        return dishesMenus;
+    }
+
+    public void setDishesMenus(List<DishMenu> dishesMenus) {
+        this.dishesMenus = dishesMenus;
     }
 
     @Override
