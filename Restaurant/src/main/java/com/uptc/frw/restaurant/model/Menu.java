@@ -13,9 +13,9 @@ public class Menu {
     private long idMenu;
     @Column(name = "DESCRIPCION_MENU")
     private String description;
-    @OneToMany(mappedBy = "menu", cascade = {CascadeType.PERSIST})
+    @OneToMany(mappedBy = "menu", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     private List<SaleMenu> saleMenus;
-    @OneToMany(mappedBy = "menu", cascade = {CascadeType.PERSIST})
+    @OneToMany(mappedBy = "menu", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     private List<DishMenu> dishesMenus;
     public Menu() {
     }

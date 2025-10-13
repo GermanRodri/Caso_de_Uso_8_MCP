@@ -10,13 +10,13 @@ import java.util.Date;
 @IdClass(DishMenuKey.class)
 public class DishMenu {
     @Id
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     @JoinColumn(name = "ID_MENU")
     @JsonIgnore
     private Menu menu;
 
     @Id
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     @JoinColumn(name = "ID_PLATO")
     @JsonIgnore
     private Dish dish;

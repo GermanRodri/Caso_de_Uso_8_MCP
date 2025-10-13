@@ -17,7 +17,7 @@ public class Dish {
     private String name;
     @Column(name = "DESCRIPCION")
     private String description;
-    @OneToMany(mappedBy = "dish")
+    @OneToMany(mappedBy = "dish", cascade = CascadeType.REMOVE)
     private List<DishMenu> dishMenuList;
 
     public Dish() {
