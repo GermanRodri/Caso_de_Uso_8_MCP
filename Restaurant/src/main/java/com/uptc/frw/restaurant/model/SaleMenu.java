@@ -1,22 +1,13 @@
 package com.uptc.frw.restaurant.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.uptc.frw.restaurant.model.key.DishMenuKey;
 import jakarta.persistence.*;
-
-import java.util.List;
 
 @Entity
 @Table(name = "VENTAS_MENU")
 @IdClass(SaleMenu.class)
 public class SaleMenu {
 
-    @Column(name = "ID_VENTA", insertable = false, updatable = false)
-    private long idSale;
-    @Column(name = "ID_MENU", insertable = false, updatable = false)
-    private long idMenu;
-    @Column(name = "CANTIDAD")
-    private long quantity;
     @Id
     @ManyToOne(cascade = {CascadeType.PERSIST})
     @JoinColumn(name = "ID_MENU")
@@ -27,6 +18,12 @@ public class SaleMenu {
     @JoinColumn(name = "ID_VENTA")
     @JsonIgnore
     private Sale sale;
+    @Column(name = "ID_VENTA", insertable = false, updatable = false)
+    private long idSale;
+    @Column(name = "ID_MENU", insertable = false, updatable = false)
+    private long idMenu;
+    @Column(name = "CANTIDAD")
+    private long quantity;
 
     public SaleMenu() {
     }

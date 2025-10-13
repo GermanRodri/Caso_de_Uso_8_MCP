@@ -17,9 +17,9 @@ public class SaleMenuController {
     public List<SaleMenu> getAllSalesMenu(){
         return saleMenuService.findAllSaleMenuService();
     }
-    @GetMapping("/{id}")
-    public SaleMenu saleMenu(@PathVariable long id){
-        return saleMenuService.getSaleMenuById(id);
+    @GetMapping("/{id}/{id1}")
+    public SaleMenu saleMenu(@PathVariable long id, @PathVariable long id1){
+        return saleMenuService.findSaleMenuById(id,id1);
     }
     @PostMapping
     public SaleMenu saveSaleMenu(@RequestBody SaleMenu saleMenu){

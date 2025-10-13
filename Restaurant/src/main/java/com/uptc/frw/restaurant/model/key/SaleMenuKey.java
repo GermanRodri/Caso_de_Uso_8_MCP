@@ -12,6 +12,9 @@ public class SaleMenuKey implements Serializable {
     public SaleMenuKey() {
     }
 
+    public SaleMenuKey(Sale sale, Menu menu) {
+    }
+
     public Sale getSale() {
         return sale;
     }
