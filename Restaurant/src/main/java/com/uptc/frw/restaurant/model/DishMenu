@@ -11,9 +11,9 @@ import java.util.Date;
 public class DishMenu {
     @Id
     @Column(name = "ID_MENU")
-    private long idMenu;
+    private Long idMenu;
     @Column(name = "ID_PLATO")
-    private long idDish;
+    private Long idDish;
     @Column(name = "PRECIO")
     private Double price;
     @Column(name = "FECHA")
