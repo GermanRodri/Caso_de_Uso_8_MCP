@@ -38,6 +38,6 @@ public class SaleMenuService {
             throw new RuntimeException("El registro no existe");
         }
     }
-
+    public SaleMenu
 
 }
