@@ -2,6 +2,8 @@ package com.uptc.frw.restaurant.model;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "PLATOS")
 public class Dish {
@@ -15,6 +17,8 @@ public class Dish {
     private String name;
     @Column(name = "DESCRIPCION")
     private String description;
+    @OneToMany(mappedBy = "dish")
+    private List<DishMenu> dishMenuList;
 
     public Dish() {
     }
@@ -49,6 +53,14 @@ public class Dish {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public List<DishMenu> getDishMenuList() {
+        return dishMenuList;
+    }
+
+    public void setDishMenuList(List<DishMenu> dishMenuList) {
+        this.dishMenuList = dishMenuList;
     }
 
     @Override
