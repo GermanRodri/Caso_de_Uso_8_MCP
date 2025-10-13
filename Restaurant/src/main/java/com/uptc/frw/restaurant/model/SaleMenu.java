@@ -10,7 +10,7 @@ import java.util.List;
 @IdClass(SaleMenu.class)
 public class SaleMenu {
 
-    @Column(name = "ID_SALE", insertable = false, updatable = false)
+    @Column(name = "ID_VENTA", insertable = false, updatable = false)
     private long idSale;
     @Column(name = "ID_MENU", insertable = false, updatable = false)
     private long idMenu;
@@ -22,7 +22,7 @@ public class SaleMenu {
     private Menu menu;
     @Id
     @ManyToOne(cascade = {CascadeType.PERSIST})
-    @JoinColumn(name = "ID_SALE")
+    @JoinColumn(name = "ID_VENTA")
     private Sale sale;
 
     public SaleMenu() {
