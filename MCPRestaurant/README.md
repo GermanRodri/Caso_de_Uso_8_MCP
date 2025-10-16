@@ -152,20 +152,51 @@ export RESTAURANT_API_PASSWORD=your_password
 
 ### Construir el Proyecto
 
+**macOS/Linux:**
 ```bash
 ./gradlew clean build
 ```
 
+**Windows:**
+```cmd
+gradlew.bat clean build
+```
+
+#### Solución de Problemas de Permisos
+
+Si obtienes el error `operation not permitted` en **macOS/Linux**:
+```bash
+chmod +x gradlew
+xattr -c gradlew
+```
+
+Si obtienes errores de permisos en **Windows**:
+```cmd
+icacls gradlew.bat /grant %USERNAME%:F
+```
+
 ### Ejecutar el Servidor
 
+**macOS/Linux:**
 ```bash
 ./gradlew bootRun
 ```
 
-O ejecutar el JAR:
+**Windows:**
+```cmd
+gradlew.bat bootRun
+```
 
+O ejecutar el JAR directamente:
+
+**macOS/Linux:**
 ```bash
 java -jar build/libs/mcprestaurant-0.0.1-SNAPSHOT.jar
+```
+
+**Windows:**
+```cmd
+java -jar build\libs\mcprestaurant-0.0.1-SNAPSHOT.jar
 ```
 
 ## Requisitos de la API Externa
@@ -223,11 +254,15 @@ Este servidor utiliza **transporte STDIO** - Claude Desktop lanza el JAR directa
 ### Configuración Rápida
 
 1. **Construir el servidor:**
-   ```bash
-   ./gradlew clean build
-   ```
+   - **macOS/Linux:** `./gradlew clean build`  
+   - **Windows:** `gradlew.bat clean build`
 
-2. **Configurar Claude Desktop** - Edita `~/Library/Application Support/Claude/claude_desktop_config.json`:
+2. **Configurar Claude Desktop:**
+
+   **macOS:** Edita `~/Library/Application Support/Claude/claude_desktop_config.json`  
+   **Windows:** Edita `%APPDATA%\Claude\claude_desktop_config.json`
+
+   **Configuración para macOS/Linux:**
    ```json
    {
      "mcpServers": {
@@ -236,6 +271,26 @@ Este servidor utiliza **transporte STDIO** - Claude Desktop lanza el JAR directa
          "args": [
            "-jar",
            "/path/to/MCPRestaurant/build/libs/mcprestaurant-0.0.1-SNAPSHOT.jar"
+         ],
+         "env": {
+           "RESTAURANT_API_BASE_URL": "http://localhost:8080/api",
+           "RESTAURANT_API_USERNAME": "admin",
+           "RESTAURANT_API_PASSWORD": "password"
+         }
+       }
+     }
+   }
+   ```
+
+   **Configuración para Windows:**
+   ```json
+   {
+     "mcpServers": {
+       "restaurant": {
+         "command": "java",
+         "args": [
+           "-jar",
+           "C:\\path\\to\\MCPRestaurant\\build\\libs\\mcprestaurant-0.0.1-SNAPSHOT.jar"
          ],
          "env": {
            "RESTAURANT_API_BASE_URL": "http://localhost:8080/api",

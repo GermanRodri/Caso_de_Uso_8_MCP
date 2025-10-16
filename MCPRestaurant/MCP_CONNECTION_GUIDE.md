@@ -28,17 +28,41 @@ Cuando Claude Desktop ejecuta el JAR:
 
 Asegúrate de tener la última versión construida:
 
+**macOS/Linux:**
 ```bash
 cd /path/to/MCPRestaurant
 ./gradlew clean build
+```
+
+**Windows:**
+```cmd
+cd C:\path\to\MCPRestaurant
+gradlew.bat clean build
+```
+
+#### Solución de Problemas de Permisos
+
+Si obtienes el error `operation not permitted` en **macOS/Linux**:
+```bash
+# Remover atributos extendidos y establecer permisos
+chmod +x gradlew
+xattr -c gradlew
+```
+
+Si obtienes errores de permisos en **Windows**:
+```cmd
+# Ejecutar como administrador o verificar que gradlew.bat sea ejecutable
+icacls gradlew.bat /grant %USERNAME%:F
 ```
 
 ### Paso 2: Configurar Claude Desktop para STDIO
 
 Actualiza tu archivo de configuración MCP de Claude Desktop:
 
-**macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
+**macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`  
+**Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
 
+#### Configuración para macOS/Linux:
 ```json
 {
   "mcpServers": {
@@ -46,7 +70,27 @@ Actualiza tu archivo de configuración MCP de Claude Desktop:
       "command": "/usr/bin/java",
       "args": [
         "-jar",
-        "/ruta/a/mcprestaurant-0.0.1-SNAPSHOT.jar"
+        "/path/to/mcprestaurant-0.0.1-SNAPSHOT.jar"
+      ],
+      "env": {
+        "RESTAURANT_API_BASE_URL": "http://localhost:8080/api",
+        "RESTAURANT_API_USERNAME": "admin",
+        "RESTAURANT_API_PASSWORD": "password"
+      }
+    }
+  }
+}
+```
+
+#### Configuración para Windows:
+```json
+{
+  "mcpServers": {
+    "restaurant": {
+      "command": "java",
+      "args": [
+        "-jar",
+        "C:\\path\\to\\mcprestaurant-0.0.1-SNAPSHOT.jar"
       ],
       "env": {
         "RESTAURANT_API_BASE_URL": "http://localhost:8080/api",
@@ -109,11 +153,11 @@ Esto significa:
 ### El servidor no aparece en Claude Desktop
 1. Verifica los logs de Claude Desktop:
    - **macOS:** `~/Library/Logs/Claude/mcp*.log`
+   - **Windows:** `%APPDATA%\Claude\logs\mcp*.log`
 2. Verifica que la ruta del JAR en `claude_desktop_config.json` sea correcta
 3. Asegúrate de reconstruir después de cualquier cambio en el código:
-   ```bash
-   ./gradlew clean build
-   ```
+   - **macOS/Linux:** `./gradlew clean build`
+   - **Windows:** `gradlew.bat clean build`
 
 ### Errores de "Server disconnected"
 - Verifica que tu API externa de restaurante esté ejecutándose en `http://localhost:8080/api`
@@ -127,26 +171,26 @@ Dado que todo el logging está deshabilitado para STDIO, no puedes ver la salida
    ```properties
    # Temporarily enable for debugging
    logging.level.root=DEBUG
+   # macOS/Linux:
    logging.file.name=/tmp/mcp-restaurant-debug.log
+   # Windows:
+   # logging.file.name=C:\\temp\\mcp-restaurant-debug.log
    ```
 
 2. **Reconstruir y probar:**
-   ```bash
-   ./gradlew clean build
-   ```
+   - **macOS/Linux:** `./gradlew clean build`
+   - **Windows:** `gradlew.bat clean build`
 
 3. **Revisar el archivo de log:**
-   ```bash
-   tail -f /tmp/mcp-restaurant-debug.log
-   ```
+   - **macOS/Linux:** `tail -f /tmp/mcp-restaurant-debug.log`
+   - **Windows:** `Get-Content -Path "C:\temp\mcp-restaurant-debug.log" -Wait` (PowerShell)
 
 4. **Recuerda deshabilitar el logging nuevamente** cuando termines de depurar (restaura `logging.level.root=OFF`)
 
 ### Reconstruir Después de Cambios
 Siempre reconstruye después de modificar el código:
-```bash
-./gradlew clean build
-```
+- **macOS/Linux:** `./gradlew clean build`
+- **Windows:** `gradlew.bat clean build`
 
 Luego reinicia Claude Desktop para cargar el nuevo JAR.
 
