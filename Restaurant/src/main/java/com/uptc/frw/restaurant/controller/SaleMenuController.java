@@ -29,14 +29,7 @@ public class SaleMenuController {
     }
     @GetMapping("/{idMenu}/{idSale}")
     public SaleMenu saleMenu(@PathVariable long idMenu, @PathVariable long idSale){
-        SaleMenuKey saleMenuKey = new SaleMenuKey();
-        Menu menu = new Menu();
-        menu.setIdMenu(idMenu);
-        Sale sale = new Sale();
-        sale.setId(idSale);
-        saleMenuKey.setMenu(menu);
-        saleMenuKey.setSale(sale);
-        return saleMenuService.findSaleMenuById(saleMenuKey);
+        return saleMenuService.findSaleMenuById(idSale,idMenu);
     }
     @PostMapping
     public SaleMenu saveSaleMenu(@RequestBody SaleMenu saleMenu){
@@ -48,13 +41,6 @@ public class SaleMenuController {
     }
     @DeleteMapping
     public void deleteSaleMenu(@RequestParam long idSale, @RequestParam long idMenu){
-        SaleMenuKey saleMenuKey = new SaleMenuKey();
-        Menu menu = new Menu();
-        menu.setIdMenu(idMenu);
-        Sale sale = new Sale();
-        sale.setId(idSale);
-        saleMenuKey.setMenu(menu);
-        saleMenuKey.setSale(sale);
-        saleMenuService.deleteSaleMenu(saleMenuKey);
+        saleMenuService.deleteSaleMenu(idSale,idMenu);
     }
 }

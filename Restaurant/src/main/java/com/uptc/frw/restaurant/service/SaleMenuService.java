@@ -1,7 +1,6 @@
 package com.uptc.frw.restaurant.service;
 
 
-import com.uptc.frw.restaurant.model.DishMenu;
 import com.uptc.frw.restaurant.model.Menu;
 import com.uptc.frw.restaurant.model.Sale;
 import com.uptc.frw.restaurant.model.SaleMenu;
@@ -29,7 +28,14 @@ public class SaleMenuService {
         return saleMenuRepository.findAll();
     }
 
-    public SaleMenu findSaleMenuById(SaleMenuKey saleMenuKey) {
+    public SaleMenu findSaleMenuById(long idMenu, long idSale) {
+        SaleMenuKey saleMenuKey = new SaleMenuKey();
+        Menu menu = new Menu();
+        menu.setIdMenu(idMenu);
+        Sale sale = new Sale();
+        sale.setId(idSale);
+        saleMenuKey.setMenu(menu);
+        saleMenuKey.setSale(sale);
         return saleMenuRepository.findById(saleMenuKey).orElse(null);
     }
 
@@ -43,7 +49,7 @@ public class SaleMenuService {
 
     public SaleMenu updateSalesMenu(SaleMenu saleMenu){
         SaleMenuKey keySaleMenu = new SaleMenuKey(saleMenu.getSale(), saleMenu.getMenu());
-        SaleMenu newSaleMenu = findSaleMenuById(keySaleMenu);
+        SaleMenu newSaleMenu = findSaleMenuById(keySaleMenu.getMenu().getIdMenu(), keySaleMenu.getSale().getId());
         if (newSaleMenu == null){
             newSaleMenu.setQuantity(saleMenu.getQuantity());
             return newSaleMenu;
@@ -51,7 +57,14 @@ public class SaleMenuService {
             throw new RuntimeException("El registro no existe");
         }
     }
-    public void deleteSaleMenu(SaleMenuKey saleMenuKey){
+    public void deleteSaleMenu(long idSale, long idMenu){
+        SaleMenuKey saleMenuKey = new SaleMenuKey();
+        Menu menu = new Menu();
+        menu.setIdMenu(idMenu);
+        Sale sale = new Sale();
+        sale.setId(idSale);
+        saleMenuKey.setMenu(menu);
+        saleMenuKey.setSale(sale);
         saleMenuRepository.deleteById(saleMenuKey);
     }
 
