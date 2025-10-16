@@ -11,7 +11,10 @@ public class DishMenuKey implements Serializable {
 
     public DishMenuKey() {}
 
-    public DishMenuKey(Dish dish, Menu menu) {}
+    public DishMenuKey(Dish dish, Menu menu) {
+        this.dish = dish;
+        this.menu = menu;
+    }
 
     public Menu getMenu() {
         return menu;
