@@ -95,7 +95,7 @@ Actualiza tu archivo de configuración MCP de Claude Desktop:
       "env": {
         "RESTAURANT_API_BASE_URL": "http://localhost:8080/api",
         "RESTAURANT_API_USERNAME": "admin",
-        "RESTAURANT_API_PASSWORD": "password"
+        "RESTAURANT_API_PASSWORD": "admin"
       }
     }
   }
