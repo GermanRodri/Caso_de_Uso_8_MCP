@@ -29,7 +29,6 @@ public class MenuController {
     }
     @DeleteMapping
     public void deleteMenu(@RequestParam long id){
-        System.out.println(id);
         menuService.deleteMenu(id);
     }
 }
