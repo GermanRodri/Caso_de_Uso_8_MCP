@@ -61,6 +61,13 @@ public class DishMenuController {
         }
 
         DishMenuKey  dishMenuKey = new DishMenuKey(dish,menu);
+
+        // Verificar si el registro existe antes de eliminarlo
+        DishMenu existingDishMenu = dishMenuService.findDishMenuById(dishMenuKey);
+        if (existingDishMenu == null) {
+            throw new RuntimeException("La relación plato-menu no existe");
+        }
+
         dishMenuService.deleteDishMenu(dishMenuKey);
     }
 }
