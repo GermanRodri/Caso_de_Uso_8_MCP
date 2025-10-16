@@ -40,12 +40,14 @@ public class DishMenuService {
     }
 
     public DishMenu updateDishMenu(DishMenu dishMenu){
-        DishMenuKey dishMenuKey = new DishMenuKey(dishMenu.getDish(),dishMenu.getMenu());
+        Dish dish = dishRepository.findById(dishMenu.getIdDish()).get();
+        Menu menu = menuRepository.findById(dishMenu.getIdMenu()).get();
+        if (dish == null || menu == null) {
+            throw new RuntimeException("Plato o menu no encontrado");
+        }
+        DishMenuKey dishMenuKey = new DishMenuKey(dish,menu);
         DishMenu newDishMenu = findDishMenuById(dishMenuKey);
 
-        if(newDishMenu == null){
-            throw new RuntimeException("Plato de menu no encontrado");
-        }
         newDishMenu.setDate(dishMenu.getDate());
         newDishMenu.setPrice(dishMenu.getPrice());
 
