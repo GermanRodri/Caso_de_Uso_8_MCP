@@ -1,11 +1,12 @@
 package com.uptc.frw.restaurant.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.uptc.frw.restaurant.model.key.SaleMenuKey;
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "VENTAS_MENU")
-@IdClass(SaleMenu.class)
+@IdClass(SaleMenuKey.class)
 public class SaleMenu {
 
     @Id

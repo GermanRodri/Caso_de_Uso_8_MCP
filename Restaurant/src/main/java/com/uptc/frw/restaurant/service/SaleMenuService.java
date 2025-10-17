@@ -23,27 +23,35 @@ public class SaleMenuService {
     private SaleRepository saleRepository;
     @Autowired
     private MenuService menuService;
+    @Autowired
+    private DishService dishService;
+    @Autowired
+    private SaleService saleService;
 
     public List<SaleMenu> findAllSaleMenuService(){
         return saleMenuRepository.findAll();
     }
 
     public SaleMenu findSaleMenuById(long idMenu, long idSale) {
-        SaleMenuKey saleMenuKey = new SaleMenuKey();
-        Menu menu = new Menu();
-        menu.setIdMenu(idMenu);
-        Sale sale = new Sale();
-        sale.setId(idSale);
-        saleMenuKey.setMenu(menu);
-        saleMenuKey.setSale(sale);
+        Menu menu = menuService.getMenuId(idMenu);
+        Sale sale = saleService.getSaleById(idSale);
+        SaleMenuKey saleMenuKey = new SaleMenuKey(sale, menu);
+        if (sale != null || menu != null){
+            saleMenuKey.setMenu(menu);
+            saleMenuKey.setSale(sale);
         return saleMenuRepository.findById(saleMenuKey).orElse(null);
+        }else {
+            throw new RuntimeException("Venta o menu no encontrado");
+        }
     }
 
     public SaleMenu saveSaleMenu(SaleMenu saleMenu){
-        Menu menu = menuRepository.findById(saleMenu.getIdSale()).get();
+
+        Menu menu = menuRepository.findById(saleMenu.getIdMenu()).get();
         saleMenu.setMenu(menu);
         Sale sale = saleRepository.findById(saleMenu.getIdSale()).get();
         saleMenu.setSale(sale);
+
         return saleMenuRepository.save(saleMenu);
     }
 

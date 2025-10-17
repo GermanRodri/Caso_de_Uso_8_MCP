@@ -1,9 +1,7 @@
 package com.uptc.frw.restaurant.controller;
 
-import com.uptc.frw.restaurant.model.Menu;
-import com.uptc.frw.restaurant.model.Sale;
 import com.uptc.frw.restaurant.model.SaleMenu;
-import com.uptc.frw.restaurant.model.key.SaleMenuKey;
+import com.uptc.frw.restaurant.model.key.DishMenuKey;
 import com.uptc.frw.restaurant.service.MenuService;
 import com.uptc.frw.restaurant.service.SaleMenuService;
 import com.uptc.frw.restaurant.service.SaleService;
@@ -28,8 +26,8 @@ public class SaleMenuController {
         return saleMenuService.findAllSaleMenuService();
     }
     @GetMapping("/{idMenu}/{idSale}")
-    public SaleMenu saleMenu(@PathVariable long idMenu, @PathVariable long idSale){
-        return saleMenuService.findSaleMenuById(idSale,idMenu);
+    public SaleMenu saleMenuById(@PathVariable long idMenu, @PathVariable long idSale){
+        return saleMenuService.findSaleMenuById(idMenu, idSale);
     }
     @PostMapping
     public SaleMenu saveSaleMenu(@RequestBody SaleMenu saleMenu){
