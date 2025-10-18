@@ -8,8 +8,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public record SaleMenu(
-    @JsonProperty("idMenu") Long menuId,
-    @JsonProperty("idSale") Long saleId,
+    @JsonProperty("idMenu") Long idMenu,
+    @JsonProperty("idSale") Long idSale,
     @JsonProperty("quantity") Integer quantity
 ) {
 }

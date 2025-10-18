@@ -78,8 +78,8 @@ public class SaleMenuService {
         return restClient.post()
                 .uri("/SalesMenu")
                 .body(Map.of(
-                    "menuId", idMenu,
-                    "saleId", idSale,
+                    "idMenu", idMenu,
+                    "idSale", idSale,
                     "quantity", quantity
                 ))
                 .retrieve()
